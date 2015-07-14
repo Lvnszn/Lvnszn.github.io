@@ -6,18 +6,18 @@
   <title>sql学习笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="给数据库的字段取别名的时候能够直接食用’AS’关键字来命名。1select count(title) AS title_count from x
-给字段当中的值，也就是内容取别名来代替的时候，使用’case when then end’来命名1select case when title=&apos;a&apos; then BF4 when title=&apos;b&apos; then BF3 else &apos;BFHL&apos; end as">
+给字段当中的值，也就是内容取别名来代替的时候，使用’case when then end’来命名1select case when title=&apos;a&apos; then BF4 when title=&apos;b&apos; then BF3 else BFHL end as t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql学习笔记">
 <meta property="og:url" content="http://yoursite.com/2015/07/14/sql/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="给数据库的字段取别名的时候能够直接食用’AS’关键字来命名。1select count(title) AS title_count from x
-给字段当中的值，也就是内容取别名来代替的时候，使用’case when then end’来命名1select case when title=&apos;a&apos; then BF4 when title=&apos;b&apos; then BF3 else &apos;BFHL&apos; end as">
-<meta property="og:updated_time" content="2015-07-14T09:55:57.000Z">
+给字段当中的值，也就是内容取别名来代替的时候，使用’case when then end’来命名1select case when title=&apos;a&apos; then BF4 when title=&apos;b&apos; then BF3 else BFHL end as t">
+<meta property="og:updated_time" content="2015-07-14T09:56:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql学习笔记">
 <meta name="twitter:description" content="给数据库的字段取别名的时候能够直接食用’AS’关键字来命名。1select count(title) AS title_count from x
-给字段当中的值，也就是内容取别名来代替的时候，使用’case when then end’来命名1select case when title=&apos;a&apos; then BF4 when title=&apos;b&apos; then BF3 else &apos;BFHL&apos; end as">
+给字段当中的值，也就是内容取别名来代替的时候，使用’case when then end’来命名1select case when title=&apos;a&apos; then BF4 when title=&apos;b&apos; then BF3 else BFHL end as t">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -203,7 +203,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><hr><br>给数据库的字段取别名的时候能够直接食用’AS’关键字来命名。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">count</span>(title) <span class="keyword">AS</span> title_count <span class="keyword">from</span> x</span></span><br></pre></td></tr></table></figure></p>
-<p>给字段当中的值，也就是内容取别名来代替的时候，使用’case when then end’来命名<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">case</span> <span class="keyword">when</span> title=<span class="string">'a'</span> <span class="keyword">then</span> BF4 <span class="keyword">when</span> title=<span class="string">'b'</span> <span class="keyword">then</span> BF3 <span class="keyword">else</span> <span class="string">'BFHL'</span> <span class="keyword">end</span> <span class="keyword">as</span> title <span class="keyword">from</span> x</span></span><br></pre></td></tr></table></figure></p>
+<p>给字段当中的值，也就是内容取别名来代替的时候，使用’case when then end’来命名<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">case</span> <span class="keyword">when</span> title=<span class="string">'a'</span> <span class="keyword">then</span> BF4 <span class="keyword">when</span> title=<span class="string">'b'</span> <span class="keyword">then</span> BF3 <span class="keyword">else</span> BFHL <span class="keyword">end</span> <span class="keyword">as</span> title <span class="keyword">from</span> x</span></span><br></pre></td></tr></table></figure></p>
 <p>关于group by的使用，最好与聚合函数count,sum等一起使用，这样能进行更好的分类处理，按照group中比较多的列来进行计算。具体的实现方式下次在看。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> title <span class="keyword">from</span> x <span class="keyword">group</span> <span class="keyword">by</span> title</span></span><br></pre></td></tr></table></figure></p>
 
       
