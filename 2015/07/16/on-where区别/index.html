@@ -3,57 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo的常用命令 | Hexo</title>
+  <title>on&amp;where区别 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo的常用命令: 
-新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。
-1$ hexo new [layout] &amp;lt;title&amp;gt;
-
-启动服务器
-1$ hexo server
-
-生成静态文件
-1$ hexo generate
-
-部署
-1$ hexo deploy
-
-清">
+  <meta name="description" content="相同之处都是增加sql的限制条件。
+不同的地方是join on当中on的意思就是对join增加限制条件，首先执行on关键字的过滤，&amp;gt;然后获得一个join之后的总的一个数据表，然后通过where对这个表来进行过滤筛选。on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。ps:all expressions in a derived table must ha">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo的常用命令">
-<meta property="og:url" content="http://yoursite.com/2015/07/13/Hexo/index.html">
+<meta property="og:title" content="on&where区别">
+<meta property="og:url" content="http://yoursite.com/2015/07/16/on-where区别/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hexo的常用命令: 
-新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。
-1$ hexo new [layout] &amp;lt;title&amp;gt;
-
-启动服务器
-1$ hexo server
-
-生成静态文件
-1$ hexo generate
-
-部署
-1$ hexo deploy
-
-清">
-<meta property="og:updated_time" content="2015-07-13T03:01:44.000Z">
+<meta property="og:description" content="相同之处都是增加sql的限制条件。
+不同的地方是join on当中on的意思就是对join增加限制条件，首先执行on关键字的过滤，&amp;gt;然后获得一个join之后的总的一个数据表，然后通过where对这个表来进行过滤筛选。on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。ps:all expressions in a derived table must ha">
+<meta property="og:updated_time" content="2015-07-16T07:37:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo的常用命令">
-<meta name="twitter:description" content="Hexo的常用命令: 
-新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。
-1$ hexo new [layout] &amp;lt;title&amp;gt;
-
-启动服务器
-1$ hexo server
-
-生成静态文件
-1$ hexo generate
-
-部署
-1$ hexo deploy
-
-清">
+<meta name="twitter:title" content="on&where区别">
+<meta name="twitter:description" content="相同之处都是增加sql的限制条件。
+不同的地方是join on当中on的意思就是对join增加限制条件，首先执行on关键字的过滤，&amp;gt;然后获得一个join之后的总的一个数据表，然后通过where对这个表来进行过滤筛选。on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记录。ps:all expressions in a derived table must ha">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -201,11 +165,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-on-where区别" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/13/Hexo/" class="article-date">
-  	<time datetime="2015-07-13T02:43:59.000Z" itemprop="datePublished">2015-07-13</time>
+      <a href="/2015/07/16/on-where区别/" class="article-date">
+  	<time datetime="2015-07-16T07:37:27.000Z" itemprop="datePublished">2015-07-16</time>
 </a>
     </div>
   
@@ -218,7 +182,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo的常用命令
+      on&amp;where区别
     </h1>
   
 
@@ -227,7 +191,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
 	</div>
 
         
@@ -238,21 +202,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote><p>Hexo的常用命令: </p>
-<p>新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p>启动服务器</p>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">server</span></span><br></pre></td></tr></table></figure>
-
-<p>生成静态文件</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>部署</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>清除缓存文件 (db.json) 和已生成的静态文件 (public)。</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br></pre></td></tr></table></figure></blockquote>
+        <p><hr><br>相同之处都是增加sql的限制条件。</p>
+<p>不同的地方是join on当中on的意思就是对join增加限制条件，首先执行on关键字的过滤，&gt;然后获得一个join之后的总的一个数据表，然后通过where对这个表来进行过滤筛选。<br><br><br>on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记<br>录。<br><br><br>ps:all expressions in a derived table must hava an explicit name<br>关于这个问题的原因就是使用聚合函数取别名的时候，join前后的名字可能相同，因此需要<br>将他们的名字修改掉。<br><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">case</span> <span class="keyword">when</span> conversion.offer_Id=<span class="string">'1000dm0bj6gq'</span> <span class="keyword">then</span> <span class="string">'PS4'</span> <span class="keyword">else</span> <span class="string">'PS3'</span> <span class="keyword">end</span> <span class="keyword">as</span> Collateral,<span class="keyword">sum</span>(conversion.email_campaign_cnvrsn_cnt),<span class="keyword">sum</span>(Targeted_User_Cnt) <span class="keyword">from</span> EADW_ADM_APP.CAMPAIGN_CONVERSION conversion <span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> offer_Id,Targeted_User_Cnt <span class="keyword">from</span> EADW_ADM_APP.CAMPAIGN_PROCESS <span class="keyword">where</span> Campaign_Id=<span class="string">'1000dm0bj63b'</span> <span class="keyword">and</span> lead_type_id=<span class="string">'999'</span>) n <span class="keyword">on</span> conversion.offer_Id=n.offer_Id <span class="keyword">where</span> conversion.Campaign_Id=<span class="string">'1000dm0bj63b'</span> <span class="keyword">and</span> conversion.lead_type_id=<span class="string">'999'</span> <span class="keyword">group</span> <span class="keyword">by</span> conversion.offer_Id;</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -262,15 +213,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/14/sql/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          sql学习笔记
-        
-      </div>
-    </a>
   
+    <a href="/2015/07/14/sql/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sql学习笔记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -297,7 +244,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Hexo" data-title="Hexo的常用命令" data-url="http://yoursite.com/2015/07/13/Hexo/"></div>
+	<div class="ds-thread" data-thread-key="on-where区别" data-title="on&amp;where区别" data-url="http://yoursite.com/2015/07/16/on-where区别/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
