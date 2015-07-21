@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>join的一些使用 | Hexo</title>
+  <title>groupby在teradata的个人笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="join和一些其他关键字联合起来使用的时候给我不了解的地方就是sql的执行顺序。特意去图书馆找了本sql进阶书籍观看，以此记下心得。join的其他用法网上资料有一堆，并不继续讲述。
-关于以下语句成功执行出我想要的结果，left join的时候最好把数据较多的表放在左表当中，我用right join的时候给我的数据并不完整，其中缘由我需要整理一下。
-sql的执行顺序为from后面的表与join先执行">
+  <meta name="description" content="在teradata中Selected non-aggregate values must be part of the associated group. 这个错误一直出现，虽然知道是groupby的问题，但是根本原因还是不太清楚，这次用这个&amp;gt;来祭奠我的groupby。根据网上的教程说明的是groupby需要配合聚合函数来使用分组，起初我以为就是groupby的话就必须select出这个gr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="join的一些使用">
-<meta property="og:url" content="http://yoursite.com/2015/07/17/join/index.html">
+<meta property="og:title" content="groupby在teradata的个人笔记">
+<meta property="og:url" content="http://yoursite.com/2015/07/21/groupby在teradata的个人笔记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="join和一些其他关键字联合起来使用的时候给我不了解的地方就是sql的执行顺序。特意去图书馆找了本sql进阶书籍观看，以此记下心得。join的其他用法网上资料有一堆，并不继续讲述。
-关于以下语句成功执行出我想要的结果，left join的时候最好把数据较多的表放在左表当中，我用right join的时候给我的数据并不完整，其中缘由我需要整理一下。
-sql的执行顺序为from后面的表与join先执行">
-<meta property="og:updated_time" content="2015-07-17T08:09:58.000Z">
+<meta property="og:description" content="在teradata中Selected non-aggregate values must be part of the associated group. 这个错误一直出现，虽然知道是groupby的问题，但是根本原因还是不太清楚，这次用这个&amp;gt;来祭奠我的groupby。根据网上的教程说明的是groupby需要配合聚合函数来使用分组，起初我以为就是groupby的话就必须select出这个gr">
+<meta property="og:updated_time" content="2015-07-21T03:21:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="join的一些使用">
-<meta name="twitter:description" content="join和一些其他关键字联合起来使用的时候给我不了解的地方就是sql的执行顺序。特意去图书馆找了本sql进阶书籍观看，以此记下心得。join的其他用法网上资料有一堆，并不继续讲述。
-关于以下语句成功执行出我想要的结果，left join的时候最好把数据较多的表放在左表当中，我用right join的时候给我的数据并不完整，其中缘由我需要整理一下。
-sql的执行顺序为from后面的表与join先执行">
+<meta name="twitter:title" content="groupby在teradata的个人笔记">
+<meta name="twitter:description" content="在teradata中Selected non-aggregate values must be part of the associated group. 这个错误一直出现，虽然知道是groupby的问题，但是根本原因还是不太清楚，这次用这个&amp;gt;来祭奠我的groupby。根据网上的教程说明的是groupby需要配合聚合函数来使用分组，起初我以为就是groupby的话就必须select出这个gr">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -168,11 +162,11 @@ sql的执行顺序为from后面的表与join先执行">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-join" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-groupby在teradata的个人笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/17/join/" class="article-date">
-  	<time datetime="2015-07-17T07:58:42.000Z" itemprop="datePublished">2015-07-17</time>
+      <a href="/2015/07/21/groupby在teradata的个人笔记/" class="article-date">
+  	<time datetime="2015-07-21T03:20:48.000Z" itemprop="datePublished">2015-07-21</time>
 </a>
     </div>
   
@@ -185,7 +179,7 @@ sql的执行顺序为from后面的表与join先执行">
         
   
     <h1 class="article-title" itemprop="name">
-      join的一些使用
+      groupby在teradata的个人笔记
     </h1>
   
 
@@ -205,9 +199,8 @@ sql的执行顺序为from后面的表与join先执行">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><hr><br>join和一些其他关键字联合起来使用的时候给我不了解的地方就是sql的执行顺序。特意去图书馆找了本sql进阶书籍观看，以此记下心得。join的其他用法网上资料有一堆，并不继续讲述。</p>
-<p>关于以下语句成功执行出我想要的结果，left join的时候最好把数据较多的表放在左表当中，我用right join的时候给我的数据并不完整，其中缘由我需要整理一下。</p>
-<p>sql的执行顺序为from后面的表与join先执行，那么就是两表直接连接，接着通过on来限制对接的数据列，然后where对结果进行筛选，然后进行groupby来分组之后进行选出。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="operator"><span class="keyword">select</span> <span class="keyword">case</span> <span class="keyword">when</span> conversion.offer_Id=<span class="string">'1000dm0bj6gq'</span> <span class="keyword">then</span> <span class="string">'PS4'</span> <span class="keyword">else</span> <span class="string">'PS3'</span> <span class="keyword">end</span> <span class="keyword">as</span> Collateral,<span class="keyword">sum</span>(conversion.email_campaign_cnvrsn_cnt),<span class="keyword">sum</span>(process.Targeted_User_Cnt) <span class="keyword">from</span> EADW_ADM_APP.CAMPAIGN_PROCESS process <span class="keyword">left</span> <span class="keyword">join</span> EADW_ADM_APP.CAMPAIGN_CONVERSION conversion <span class="keyword">on</span> conversion.Campaign_Id=process.Campaign_Id <span class="keyword">and</span> conversion.offer_Id=process.offer_Id <span class="keyword">and</span> conversion.Segment_Id=process.Segment_Id <span class="keyword">and</span> conversion.Step_Order_Nbr=process.Step_Order_Nbr <span class="keyword">and</span> conversion.Step_Id=process.Step_Id <span class="keyword">and</span> conversion.Country_Code=process.Country_Code <span class="keyword">and</span> conversion.Campaign_Collection_Id=process.Campaign_Collection_Id <span class="keyword">and</span> conversion.Generation_Date=process.Generation_Date <span class="keyword">and</span> conversion.Lead_Type_Id=process.Lead_Type_Id  <span class="keyword">where</span> process.Campaign_Id=<span class="string">'1000dm0bj63b'</span> <span class="keyword">and</span> process.lead_type_id=<span class="string">'999'</span> <span class="keyword">group</span> <span class="keyword">by</span> process.offer_Id;</span></span><br></pre></td></tr></table></figure><br>以前写的sql，on跟的限制条件不多，所以对接的时候有一堆重复数据，如果没有约束的时候，仅用普通的列相对接的话，要考虑好限制条件。</p>
+        <p><hr><br>在teradata中Selected non-aggregate values must be part of the associated group. 这个错误一直出现，虽然知道是groupby的问题，但是根本原因还是不太清楚，这次用这个&gt;来祭奠我的groupby。<br>根据网上的教程说明的是groupby需要配合聚合函数来使用分组，起初我以为就是groupby的<br>话就必须select出这个groupby的函数，后来的例子让我发现我错的还是比较离谱的。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">sum</span>(process.Target),<span class="keyword">sum</span>(conversion.cnvrsn) <span class="keyword">from</span> (<span class="keyword">select</span> <span class="keyword">sum</span>(Targeted_User_Cnt) <span class="keyword">as</span> Target,offer_id <span class="keyword">from</span> EADW_ADM_APP.CAMPAIGN_PROCESS  <span class="keyword">where</span> Campaign_Id=<span class="string">'1000dq9pd69b'</span> <span class="keyword">and</span> lead_type_id=<span class="string">'999'</span> <span class="keyword">group</span> <span class="keyword">by</span> offer_id) process <span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> <span class="keyword">sum</span>(email_campaign_cnvrsn_cnt) <span class="keyword">as</span> cnvrsn,offer_id <span class="keyword">from</span> EADW_ADM_APP.CAMPAIGN_CONVERSION  <span class="keyword">where</span> Campaign_Id=<span class="string">'1000dq9pd69b'</span> <span class="keyword">and</span> lead_type_id=<span class="string">'999'</span> <span class="keyword">group</span> <span class="keyword">by</span> offer_id) conversion <span class="keyword">on</span> conversion.offer_id=process.offer_id;</span></span><br></pre></td></tr></table></figure><br>上面这个sql语句是可以得出想要的结果，从中看出select中不需要添加任何offerid就能获<br>得我想要的结果。<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">350047,36</span>8</span><br></pre></td></tr></table></figure><br>以上的数据就是最终产生的结果，与我单个sql语句生产的结果是一样的。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">Select</span> <span class="keyword">sum</span>(Targeted_User_Cnt) <span class="keyword">from</span> EADW_ADM_APP.CAMPAIGN_PROCESS <span class="keyword">where</span> Campaign_Id=<span class="string">'1000dq9pd69b'</span> <span class="keyword">and</span> lead_type_id=<span class="string">'999'</span>;</span></span><br></pre></td></tr></table></figure></p>
+<p>通过跟上司的讨论，因为两个表细致程度不是一样的，所以很容易就产生一对多的问题，这<br>样重复数据对结果影响还是比较大的，所以我就提高维度，把我不需要关心的数据直接去除<br>掉，不降低维度是因为比较麻烦，而去意义并不大。</p>
 
       
     </div>
@@ -217,18 +210,9 @@ sql的执行顺序为from后面的表与join先执行">
     
 <nav id="article-nav">
   
-    <a href="/2015/07/21/groupby在teradata的个人笔记/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          groupby在teradata的个人笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/16/on-where区别/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">on&amp;where区别</div>
+    <a href="/2015/07/17/join/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">join的一些使用</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -257,7 +241,7 @@ sql的执行顺序为from后面的表与join先执行">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="join" data-title="join的一些使用" data-url="http://yoursite.com/2015/07/17/join/"></div>
+	<div class="ds-thread" data-thread-key="groupby在teradata的个人笔记" data-title="groupby在teradata的个人笔记" data-url="http://yoursite.com/2015/07/21/groupby在teradata的个人笔记/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
