@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>union和unionall的使用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: union和unionall的使用date: 2015-07-23 14:35:56
-tags: sql关于union的使用Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；Union All，对两个结果集进行并集操作，包括重复行，不进行排序；这个是网上大多的结论，我自己用mysql尝试了一下。首先是原料的两句sql1mysql&amp;gt; select * f">
+  <meta name="description" content="关于union的使用Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；Union All，对两个结果集进行并集操作，包括重复行，不进行排序；这个是网上大多的结论，我自己用mysql尝试了一下。首先是原料的两句sql1mysql&amp;gt; select * from ja2;结果如下:+——+———+———-+| id | name | score |+——+———+———-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="union和unionall的使用">
 <meta property="og:url" content="http://yoursite.com/2015/07/23/union和unionall的使用/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: union和unionall的使用date: 2015-07-23 14:35:56
-tags: sql关于union的使用Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；Union All，对两个结果集进行并集操作，包括重复行，不进行排序；这个是网上大多的结论，我自己用mysql尝试了一下。首先是原料的两句sql1mysql&amp;gt; select * f">
-<meta property="og:updated_time" content="2015-07-23T07:27:00.000Z">
+<meta property="og:description" content="关于union的使用Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；Union All，对两个结果集进行并集操作，包括重复行，不进行排序；这个是网上大多的结论，我自己用mysql尝试了一下。首先是原料的两句sql1mysql&amp;gt; select * from ja2;结果如下:+——+———+———-+| id | name | score |+——+———+———-">
+<meta property="og:updated_time" content="2015-07-23T07:30:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title: union和unionall的使用date: 2015-07-23 14:35:56
-tags: sql关于union的使用Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；Union All，对两个结果集进行并集操作，包括重复行，不进行排序；这个是网上大多的结论，我自己用mysql尝试了一下。首先是原料的两句sql1mysql&amp;gt; select * f">
+<meta name="twitter:title" content="union和unionall的使用">
+<meta name="twitter:description" content="关于union的使用Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；Union All，对两个结果集进行并集操作，包括重复行，不进行排序；这个是网上大多的结论，我自己用mysql尝试了一下。首先是原料的两句sql1mysql&amp;gt; select * from ja2;结果如下:+——+———+———-+| id | name | score |+——+———+———-">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -169,7 +166,7 @@ tags: sql关于union的使用Union，对两个结果集进行并集操作，不�
   
     <div class="article-meta">
       <a href="/2015/07/23/union和unionall的使用/" class="article-date">
-  	<time datetime="2015-07-23T07:27:02.000Z" itemprop="datePublished">2015-07-23</time>
+  	<time datetime="2015-07-23T06:35:56.000Z" itemprop="datePublished">2015-07-23</time>
 </a>
     </div>
   
@@ -178,10 +175,31 @@ tags: sql关于union的使用Union，对两个结果集进行并集操作，不�
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      union和unionall的使用
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: union和unionall的使用<br>date: 2015-07-23 14:35:56</p>
-<h2 id="tags:_sql">tags: sql</h2><p><hr><br>关于union的使用<br>Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；<br>Union All，对两个结果集进行并集操作，包括重复行，不进行排序；<br>这个是网上大多的结论，我自己用mysql尝试了一下。<br>首先是原料的两句sql<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from ja2;</span><br></pre></td></tr></table></figure><br>结果如下:<br>+——+———+———-+<br>| id | name | score |<br>+——+———+———-+<br>|  4 | 4    |     4 |<br>|  5 | 5    |     5 |<br>|  6 | 6    |     6 |<br>| 10 | 4    |     2 |<br>+——+———+———-+<br>4 rows in set (0.00 sec)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from stu;</span><br></pre></td></tr></table></figure><br>结果如下:<br>+——+———+———-+<br>| id | name | score |<br>+——+———+———-+<br>|  1 | 1    |     1 |<br>|  2 | 2    |     2 |<br>|  3 | 3    |     3 |<br>+——+———+———-+<br>3 rows in set (0.01 sec)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from stu</span><br><span class="line">    -&gt; union</span><br><span class="line">    -&gt; select * from ja2</span><br></pre></td></tr></table></figure><br>结果很显而易见:<br>+——+———+———-+<br>| id | name | score |<br>+——+———+———-+<br>|  1 | 1    |     1 |<br>|  2 | 2    |     2 |<br>|  3 | 3    |     3 |<br>|  4 | 4    |     4 |<br>|  5 | 5    |     5 |<br>|  6 | 6    |     6 |<br>+——+———+———-+<br>6 rows in set (0.04 sec)</p>
+        <p><hr><br>关于union的使用<br>Union，对两个结果集进行并集操作，不包括重复行，同时进行默认规则的排序；<br>Union All，对两个结果集进行并集操作，包括重复行，不进行排序；<br>这个是网上大多的结论，我自己用mysql尝试了一下。<br>首先是原料的两句sql<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from ja2;</span><br></pre></td></tr></table></figure><br>结果如下:<br>+——+———+———-+<br>| id | name | score |<br>+——+———+———-+<br>|  4 | 4    |     4 |<br>|  5 | 5    |     5 |<br>|  6 | 6    |     6 |<br>| 10 | 4    |     2 |<br>+——+———+———-+<br>4 rows in set (0.00 sec)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from stu;</span><br></pre></td></tr></table></figure><br>结果如下:<br>+——+———+———-+<br>| id | name | score |<br>+——+———+———-+<br>|  1 | 1    |     1 |<br>|  2 | 2    |     2 |<br>|  3 | 3    |     3 |<br>+——+———+———-+<br>3 rows in set (0.01 sec)<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from stu</span><br><span class="line">    -&gt; union</span><br><span class="line">    -&gt; select * from ja2</span><br></pre></td></tr></table></figure><br>结果很显而易见:<br>+——+———+———-+<br>| id | name | score |<br>+——+———+———-+<br>|  1 | 1    |     1 |<br>|  2 | 2    |     2 |<br>|  3 | 3    |     3 |<br>|  4 | 4    |     4 |<br>|  5 | 5    |     5 |<br>|  6 | 6    |     6 |<br>| 10 | 4    |     2 |<br>+——+———+———-+<br>7 rows in set (0.00 sec)</p>
 <p>接下去我对这个对等的结果很好奇，是不是name对应的score，那么返回的是什么</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select name from stu union all select score from ja2;</span><br></pre></td></tr></table></figure>
 <p>+———+<br>| name |<br>+———+<br>| 1    |<br>| 2    |<br>| 3    |<br>| 4    |<br>| 5    |<br>| 6    |<br>| 2    |<br>+———+<br>这个是最后的结果，因为union会去重，所以最后的2会看不见。虽然最终的结果是name，但是的确是score上面的内容。</p>
@@ -225,7 +243,7 @@ tags: sql关于union的使用Union，对两个结果集进行并集操作，不�
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="union和unionall的使用" data-title="" data-url="http://yoursite.com/2015/07/23/union和unionall的使用/"></div>
+	<div class="ds-thread" data-thread-key="union和unionall的使用" data-title="union和unionall的使用" data-url="http://yoursite.com/2015/07/23/union和unionall的使用/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
