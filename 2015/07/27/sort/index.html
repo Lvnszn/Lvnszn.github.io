@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>笛卡尔 | Hexo</title>
+  <title>sort | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于sql的笛卡尔联结，无论是否增加where，其中进行的依然是笛卡尔连接，但是不加限制条件会有大量的数据。1select * from a,b
-1select * from a,b where a.id=b.id
-以上都会进行全表扫描。">
+  <meta name="description" content="linux中有一个sort命令是对数值来进行排序的。sort [-bcfMnrtk][源文件][-o 输出文件]sort一般是用升序来实现的，如果想要用降序来显示的话我们就得使用1sort -r xxx而-u是用来去掉重复的数据1sort -u xxx-n是以数值来进行排序的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="笛卡尔">
-<meta property="og:url" content="http://yoursite.com/2015/07/21/笛卡尔/index.html">
+<meta property="og:title" content="sort">
+<meta property="og:url" content="http://yoursite.com/2015/07/27/sort/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="关于sql的笛卡尔联结，无论是否增加where，其中进行的依然是笛卡尔连接，但是不加限制条件会有大量的数据。1select * from a,b
-1select * from a,b where a.id=b.id
-以上都会进行全表扫描。">
-<meta property="og:updated_time" content="2015-07-21T07:57:04.000Z">
+<meta property="og:description" content="linux中有一个sort命令是对数值来进行排序的。sort [-bcfMnrtk][源文件][-o 输出文件]sort一般是用升序来实现的，如果想要用降序来显示的话我们就得使用1sort -r xxx而-u是用来去掉重复的数据1sort -u xxx-n是以数值来进行排序的。">
+<meta property="og:updated_time" content="2015-07-27T07:56:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="笛卡尔">
-<meta name="twitter:description" content="关于sql的笛卡尔联结，无论是否增加where，其中进行的依然是笛卡尔连接，但是不加限制条件会有大量的数据。1select * from a,b
-1select * from a,b where a.id=b.id
-以上都会进行全表扫描。">
+<meta name="twitter:title" content="sort">
+<meta name="twitter:description" content="linux中有一个sort命令是对数值来进行排序的。sort [-bcfMnrtk][源文件][-o 输出文件]sort一般是用升序来实现的，如果想要用降序来显示的话我们就得使用1sort -r xxx而-u是用来去掉重复的数据1sort -u xxx-n是以数值来进行排序的。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -168,11 +162,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-笛卡尔" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-sort" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/21/笛卡尔/" class="article-date">
-  	<time datetime="2015-07-21T07:52:11.000Z" itemprop="datePublished">2015-07-21</time>
+      <a href="/2015/07/27/sort/" class="article-date">
+  	<time datetime="2015-07-27T07:48:47.000Z" itemprop="datePublished">2015-07-27</time>
 </a>
     </div>
   
@@ -185,7 +179,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      笛卡尔
+      sort
     </h1>
   
 
@@ -194,7 +188,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
 	</div>
 
         
@@ -205,9 +199,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><hr><br>关于sql的笛卡尔联结，无论是否增加where，其中进行的依然是笛卡尔连接，但是不加限制条件会有大量的数据。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> * <span class="keyword">from</span> a,b</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> * <span class="keyword">from</span> a,b <span class="keyword">where</span> a.id=b.id</span></span><br></pre></td></tr></table></figure>
-<p>以上都会进行全表扫描。</p>
+        <p><hr><br>linux中有一个sort命令是对数值来进行排序的。<br>sort [-bcfMnrtk][源文件][-o 输出文件]<br>sort一般是用升序来实现的，如果想要用降序来显示的话我们就得使用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort -r xxx</span><br></pre></td></tr></table></figure><br>而-u是用来去掉重复的数据<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort -u xxx</span><br></pre></td></tr></table></figure><br>-n是以数值来进行排序的。</p>
 
       
     </div>
@@ -217,18 +209,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/23/关于同一字段的加减处理的思路/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          关于同一字段的加减处理的思路
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/21/groupby在teradata的个人笔记/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">groupby在teradata的个人笔记</div>
+    <a href="/2015/07/24/awk和sed常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">awk和sed常用命令</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -257,7 +240,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="笛卡尔" data-title="笛卡尔" data-url="http://yoursite.com/2015/07/21/笛卡尔/"></div>
+	<div class="ds-thread" data-thread-key="sort" data-title="sort" data-url="http://yoursite.com/2015/07/27/sort/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
