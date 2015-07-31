@@ -103,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/sql/" style="font-size: 20px;">sql</a>
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sql/" style="font-size: 20px;">sql</a>
 					</div>
 				</section>
 				
@@ -162,6 +162,64 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-shell" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/31/shell/" class="article-date">
+  	<time datetime="2015-07-31T08:37:36.000Z" itemprop="datePublished">2015-07-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/31/shell/">shell</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><hr><br>网上看到一个需求:<br>需求如下:<br>有个TXT文本，里面记录如下：<br>“2015-07-19”,”AB”,”Y”<br>“2015-07-19”,”CD”,”N”<br>“2015-07-18”,”EF”,”Y”<br>“2015-07-19”,”GH”,”Y”<br>“2015-07-19”,”IJ”,”N”<br>每一行字符数都很规范<br>当第一列日期为当天，第三列为Y时，输出空文件，文件名为第二列_RUN，如AB_RUN，上面文本最终在相同目录下生成 AB_RUN,GH_RUN共2个空文件<br>当天日期有现成变量  $DATE  格式为字符型 如2015-07-19 </p>
+<p>忽然就想写一下来练习自己的awk和sed等语句。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file=a&#10;sed &#34;s/\&#34;//g&#34; $file |awk -F &#34;,&#34; &#39;&#123;if($3==&#34;Y&#34;) print($2&#34;_RUN&#34;)&#125;&#39;&#62;aa&#10;filename=`awk &#39;&#123;print $1&#125;&#39; aa`&#10;for f in $filename&#10;do&#10;  &#62;$f&#10;done&#10;rm aa</span><br></pre></td></tr></table></figure>
+<p>当然还有好多种方法，我这个估计是比较简陋的一种了.</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-sort" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -677,75 +735,10 @@
 
 
   
-    <article id="post-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2015/07/13/Hexo/" class="article-date">
-  	<time datetime="2015-07-13T02:43:59.000Z" itemprop="datePublished">2015-07-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/13/Hexo/">Hexo的常用命令</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote><p>Hexo的常用命令: </p>
-<p>新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p>启动服务器</p>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">server</span></span><br></pre></td></tr></table></figure>
-
-<p>生成静态文件</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>部署</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>清除缓存文件 (db.json) 和已生成的静态文件 (public)。</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo clean</span><br></pre></td></tr></table></figure></blockquote>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">

@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于同一字段的加减处理的思路 | Hexo</title>
+  <title>shell | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="昨天做到两个表的同一字段的处理就歇菜了，网上的资料也是说自身join自身，然后通过id来定位来进行相邻字段的相减。第二个方法是通过case when来判断是什么类别的字段然后将其它表中的东西放入到这个字段中来。然后进行统一的处理。
-1234case when Mailing_Group_Dev_Cnt &amp;lt;&amp;gt;0 then 1.000*Click_Cnt/Mailing_Group_Dev">
+  <meta name="description" content="网上看到一个需求:需求如下:有个TXT文本，里面记录如下：“2015-07-19”,”AB”,”Y”“2015-07-19”,”CD”,”N”“2015-07-18”,”EF”,”Y”“2015-07-19”,”GH”,”Y”“2015-07-19”,”IJ”,”N”每一行字符数都很规范当第一列日期为当天，第三列为Y时，输出空文件，文件名为第二列_RUN，如AB_RUN，上面文本最终在相同目录下生">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于同一字段的加减处理的思路">
-<meta property="og:url" content="http://yoursite.com/2015/07/23/关于同一字段的加减处理的思路/index.html">
+<meta property="og:title" content="shell">
+<meta property="og:url" content="http://yoursite.com/2015/07/31/shell/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="昨天做到两个表的同一字段的处理就歇菜了，网上的资料也是说自身join自身，然后通过id来定位来进行相邻字段的相减。第二个方法是通过case when来判断是什么类别的字段然后将其它表中的东西放入到这个字段中来。然后进行统一的处理。
-1234case when Mailing_Group_Dev_Cnt &amp;lt;&amp;gt;0 then 1.000*Click_Cnt/Mailing_Group_Dev">
-<meta property="og:updated_time" content="2015-07-23T01:40:46.000Z">
+<meta property="og:description" content="网上看到一个需求:需求如下:有个TXT文本，里面记录如下：“2015-07-19”,”AB”,”Y”“2015-07-19”,”CD”,”N”“2015-07-18”,”EF”,”Y”“2015-07-19”,”GH”,”Y”“2015-07-19”,”IJ”,”N”每一行字符数都很规范当第一列日期为当天，第三列为Y时，输出空文件，文件名为第二列_RUN，如AB_RUN，上面文本最终在相同目录下生">
+<meta property="og:updated_time" content="2015-07-31T08:42:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于同一字段的加减处理的思路">
-<meta name="twitter:description" content="昨天做到两个表的同一字段的处理就歇菜了，网上的资料也是说自身join自身，然后通过id来定位来进行相邻字段的相减。第二个方法是通过case when来判断是什么类别的字段然后将其它表中的东西放入到这个字段中来。然后进行统一的处理。
-1234case when Mailing_Group_Dev_Cnt &amp;lt;&amp;gt;0 then 1.000*Click_Cnt/Mailing_Group_Dev">
+<meta name="twitter:title" content="shell">
+<meta name="twitter:description" content="网上看到一个需求:需求如下:有个TXT文本，里面记录如下：“2015-07-19”,”AB”,”Y”“2015-07-19”,”CD”,”N”“2015-07-18”,”EF”,”Y”“2015-07-19”,”GH”,”Y”“2015-07-19”,”IJ”,”N”每一行字符数都很规范当第一列日期为当天，第三列为Y时，输出空文件，文件名为第二列_RUN，如AB_RUN，上面文本最终在相同目录下生">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -165,11 +162,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-关于同一字段的加减处理的思路" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-shell" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/23/关于同一字段的加减处理的思路/" class="article-date">
-  	<time datetime="2015-07-23T01:31:09.000Z" itemprop="datePublished">2015-07-23</time>
+      <a href="/2015/07/31/shell/" class="article-date">
+  	<time datetime="2015-07-31T08:37:36.000Z" itemprop="datePublished">2015-07-31</time>
 </a>
     </div>
   
@@ -182,7 +179,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      关于同一字段的加减处理的思路
+      shell
     </h1>
   
 
@@ -191,7 +188,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
 	</div>
 
         
@@ -202,8 +199,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><hr><br>昨天做到两个表的同一字段的处理就歇菜了，网上的资料也是说自身join自身，然后通过id来定位来进行相邻字段的相减。<br>第二个方法是通过case when来判断是什么类别的字段然后将其它表中的东西放入到这个字段中来。然后进行统一的处理。</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> when Mailing_Group_Dev_Cnt &lt;&gt;<span class="number">0</span> <span class="keyword">then</span> <span class="number">1.000</span>*Click_Cnt/Mailing_Group_Dev_Cnt <span class="keyword">else</span> <span class="constant">null</span> <span class="function"><span class="keyword">end</span> <span class="title">as</span> <span class="title">CTR</span></span></span><br><span class="line">,<span class="built_in">sum</span>(<span class="keyword">case</span> when CAMP_PRO.Lead_Type_Id = <span class="string">'60'</span> <span class="keyword">then</span> CAMP_PRO.Targeted_User_Cnt <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> Control_Group_Target_Cnt</span><br><span class="line">,<span class="built_in">sum</span>(<span class="keyword">case</span> when CAMP_PRO.Lead_Type_Id = <span class="string">'999'</span> <span class="keyword">then</span> CAMP_REV.Email_Campaign_Cnvrsn_Cnt <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> Mailing_Group_Conv</span><br><span class="line">,<span class="built_in">sum</span>(<span class="keyword">case</span> when CAMP_PRO.Lead_Type_Id = <span class="string">'60'</span> <span class="keyword">then</span> CAMP_REV.Email_Campaign_Cnvrsn_Cnt <span class="keyword">else</span> <span class="number">0</span> <span class="keyword">end</span>) <span class="keyword">as</span> Control_Group_Conv</span><br></pre></td></tr></table></figure>
+        <p><hr><br>网上看到一个需求:<br>需求如下:<br>有个TXT文本，里面记录如下：<br>“2015-07-19”,”AB”,”Y”<br>“2015-07-19”,”CD”,”N”<br>“2015-07-18”,”EF”,”Y”<br>“2015-07-19”,”GH”,”Y”<br>“2015-07-19”,”IJ”,”N”<br>每一行字符数都很规范<br>当第一列日期为当天，第三列为Y时，输出空文件，文件名为第二列_RUN，如AB_RUN，上面文本最终在相同目录下生成 AB_RUN,GH_RUN共2个空文件<br>当天日期有现成变量  $DATE  格式为字符型 如2015-07-19 </p>
+<p>忽然就想写一下来练习自己的awk和sed等语句。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file=a&#10;sed &#34;s/\&#34;//g&#34; $file |awk -F &#34;,&#34; &#39;&#123;if($3==&#34;Y&#34;) print($2&#34;_RUN&#34;)&#125;&#39;&#62;aa&#10;filename=`awk &#39;&#123;print $1&#125;&#39; aa`&#10;for f in $filename&#10;do&#10;  &#62;$f&#10;done&#10;rm aa</span><br></pre></td></tr></table></figure>
+<p>当然还有好多种方法，我这个估计是比较简陋的一种了.</p>
 
       
     </div>
@@ -213,18 +212,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/23/union和unionall的使用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          union和unionall的使用
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/21/笛卡尔/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">笛卡尔</div>
+    <a href="/2015/07/27/sort/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sort</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -253,7 +243,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="关于同一字段的加减处理的思路" data-title="关于同一字段的加减处理的思路" data-url="http://yoursite.com/2015/07/23/关于同一字段的加减处理的思路/"></div>
+	<div class="ds-thread" data-thread-key="shell" data-title="shell" data-url="http://yoursite.com/2015/07/31/shell/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
