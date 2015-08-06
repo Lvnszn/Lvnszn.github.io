@@ -310,7 +310,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><hr><br>linux中有一个sort命令是对数值来进行排序的。<br>sort [-bcfMnrtk][源文件][-o 输出文件]<br>sort一般是用升序来实现的，如果想要用降序来显示的话我们就得使用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort -r xxx</span><br></pre></td></tr></table></figure><br>而-u是用来去掉重复的数据<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort -u xxx</span><br></pre></td></tr></table></figure><br>-n是以数值来进行排序的。</p>
+        <p><hr><br>linux中有一个sort命令是对数值来进行排序的。<br>sort [-bcfMnrtk][源文件][-o 输出文件]<br>  -b   忽略每行前面开始出的空格字符。<br>  -c   检查文件是否已经按照顺序排序。<br>  -f   排序时，忽略大小写字母。<br>  -M   将前面3个字母依照月份的缩写进行排序。<br>  -n   依照数值的大小排序。<br>  -o&lt;输出文件&gt;   将排序后的结果存入指定的文件。<br>  -r   以相反的顺序来排序。<br>  -t&lt;分隔字符&gt;   指定排序时所用的栏位分隔字符。<br>  -k  选择以哪个区间进行排序。<br>sort一般是用升序来实现的，如果想要用降序来显示的话我们就得使用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort -r xxx</span><br></pre></td></tr></table></figure><br>而-u是用来去掉重复的数据<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sort -u xxx</span><br></pre></td></tr></table></figure><br>-n是以数值来进行排序的。</p>
 
       
     </div>
