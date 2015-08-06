@@ -163,6 +163,69 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-cut和count" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/06/cut和count/" class="article-date">
+  	<time datetime="2015-08-06T01:26:19.000Z" itemprop="datePublished">2015-08-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/06/cut和count/">cut和count</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><hr><br>uniq -c -f1是显示的某一个重复的地方才会计数，也就是说aab才是2，1。如果是aba的话就是111了。<br>因此一般来说都是cut之后进行排序然后再使用uniq的命令对其进行统计来显示。<br>当时team leader让我统计每个国家的人数。因此我使用了如下的shell脚本来计算最终的结果。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut -d &#39;&#34;&#39; -f 10 08-03-2015_09_36_28_AM_TRM_WW_NFS_Gamescom_Trailer_AUG15_20150803.txt|sort -k1,1|uniq -c</span><br></pre></td></tr></table></figure></p>
+<p>uniq的使用参数的含义如下</p>
+<p>– c 显示输出中，在每行行首加上本行在文件中出现的次数。它可取代- u和- d选项。</p>
+<p>– d 只显示重复行。</p>
+<p>– u 只显示文件中不重复的各行。</p>
+<p>– n 前n个字段与每个字段前的空白一起被忽略。一个字段是一个非空格、非制表符的字符串，彼此由制表符和空格隔开(字段从0开始编号)。</p>
+<p>+n 前n个字符被忽略，之前的字符被跳过(字符从0开始编号)。</p>
+<p>– f n 与- n相同，这里n是字段数。</p>
+<p>– s n 与+n相同，这里n是字符数。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-shell" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -650,63 +713,6 @@
 <p>不同的地方是join on当中on的意思就是对join增加限制条件，首先执行on关键字的过滤，&gt;然后获得一个join之后的总的一个数据表，然后通过where对这个表来进行过滤筛选。</p>
 <p>on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记<br>录。</p>
 <p>ps:all expressions in a derived table must hava an explicit name<br>关于这个问题的原因就是使用聚合函数取别名的时候，join前后的名字可能相同，因此需要<br>将他们的名字修改掉。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">case</span> <span class="keyword">when</span> conversion.offer_Id=<span class="string">'1000dm0bj6gq'</span> <span class="keyword">then</span> <span class="string">'PS4'</span> <span class="keyword">else</span> <span class="string">'PS3'</span> <span class="keyword">end</span> <span class="keyword">as</span> Collateral,<span class="keyword">sum</span>(conversion.email_campaign_cnvrsn_cnt),<span class="keyword">sum</span>(Targeted_User_Cnt) <span class="keyword">from</span> EADW_ADM_APP.CAMPAIGN_CONVERSION conversion <span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> offer_Id,Targeted_User_Cnt <span class="keyword">from</span> EADW_ADM_APP.CAMPAIGN_PROCESS <span class="keyword">where</span> Campaign_Id=<span class="string">'1000dm0bj63b'</span> <span class="keyword">and</span> lead_type_id=<span class="string">'999'</span>) n <span class="keyword">on</span> conversion.offer_Id=n.offer_Id <span class="keyword">where</span> conversion.Campaign_Id=<span class="string">'1000dm0bj63b'</span> <span class="keyword">and</span> conversion.lead_type_id=<span class="string">'999'</span> <span class="keyword">group</span> <span class="keyword">by</span> conversion.offer_Id;</span></span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="title-sql" class="article article-type-title" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/14/sql/" class="article-date">
-  	<time datetime="2015-07-14T09:41:03.000Z" itemprop="datePublished">2015-07-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/14/sql/">sql学习笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><hr><br>给数据库的字段取别名的时候能够直接食用’AS’关键字来命名。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">count</span>(title) <span class="keyword">AS</span> title_count <span class="keyword">from</span> x</span></span><br></pre></td></tr></table></figure></p>
-<p>给字段当中的值，也就是内容取别名来代替的时候，使用’case when then end’来命名<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">case</span> <span class="keyword">when</span> title=<span class="string">'a'</span> <span class="keyword">then</span> BF4 <span class="keyword">when</span> title=<span class="string">'b'</span> <span class="keyword">then</span> BF3 <span class="keyword">else</span> BFHL <span class="keyword">end</span> <span class="keyword">as</span> title <span class="keyword">from</span> x</span></span><br></pre></td></tr></table></figure></p>
-<p>关于group by的使用，最好与聚合函数count,sum等一起使用，这样能进行更好的分类处理，按照group中比较多的列来进行计算。具体的实现方式下次在看。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> title <span class="keyword">from</span> x <span class="keyword">group</span> <span class="keyword">by</span> title</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
