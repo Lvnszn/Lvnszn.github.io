@@ -103,7 +103,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sql/" style="font-size: 20px;">sql</a>
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/reading/" style="font-size: 10px;">reading</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/sql/" style="font-size: 20px;">sql</a>
 					</div>
 				</section>
 				
@@ -162,6 +162,61 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-深入浅出数据分析" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/10/深入浅出数据分析/" class="article-date">
+  	<time datetime="2015-08-10T07:14:03.000Z" itemprop="datePublished">2015-08-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/10/深入浅出数据分析/">深入浅出数据分析</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><hr><br>以此写下读第一遍的感想，大体内容就是给一些数据然后进行一些思维上面的讲解，从中收获就是没有最优解，只有最合适的解决方法。读下来的感觉还是很不错的。<br>其中比较专业的技术也讲的很通俗易懂，大体内容就是样本拆分，深入数据，如果这数据给不了什么结果则继续细化。区别两个很难判断的东西的时候添加一些时间特性越近越精确，找出共性。有机会接触这方面的任务会继续深入学习和考虑他们的思考逻辑方法。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/reading/">reading</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-cut和count" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -655,64 +710,6 @@
         <p><hr><br>join和一些其他关键字联合起来使用的时候给我不了解的地方就是sql的执行顺序。特意去图书馆找了本sql进阶书籍观看，以此记下心得。join的其他用法网上资料有一堆，并不继续讲述。</p>
 <p>关于以下语句成功执行出我想要的结果，left join的时候最好把数据较多的表放在左表当中，我用right join的时候给我的数据并不完整，其中缘由我需要整理一下。</p>
 <p>sql的执行顺序为from后面的表与join先执行，那么就是两表直接连接，接着通过on来限制对接的数据列，然后where对结果进行筛选，然后进行groupby来分组之后进行选出。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="operator"><span class="keyword">select</span> <span class="keyword">case</span> <span class="keyword">when</span> conversion.offer_Id=<span class="string">'1000dm0bj6gq'</span> <span class="keyword">then</span> <span class="string">'PS4'</span> <span class="keyword">else</span> <span class="string">'PS3'</span> <span class="keyword">end</span> <span class="keyword">as</span> Collateral,<span class="keyword">sum</span>(conversion.email_campaign_cnvrsn_cnt),<span class="keyword">sum</span>(process.Targeted_User_Cnt) <span class="keyword">from</span> EADW_ADM_APP.CAMPAIGN_PROCESS process <span class="keyword">left</span> <span class="keyword">join</span> EADW_ADM_APP.CAMPAIGN_CONVERSION conversion <span class="keyword">on</span> conversion.Campaign_Id=process.Campaign_Id <span class="keyword">and</span> conversion.offer_Id=process.offer_Id <span class="keyword">and</span> conversion.Segment_Id=process.Segment_Id <span class="keyword">and</span> conversion.Step_Order_Nbr=process.Step_Order_Nbr <span class="keyword">and</span> conversion.Step_Id=process.Step_Id <span class="keyword">and</span> conversion.Country_Code=process.Country_Code <span class="keyword">and</span> conversion.Campaign_Collection_Id=process.Campaign_Collection_Id <span class="keyword">and</span> conversion.Generation_Date=process.Generation_Date <span class="keyword">and</span> conversion.Lead_Type_Id=process.Lead_Type_Id  <span class="keyword">where</span> process.Campaign_Id=<span class="string">'1000dm0bj63b'</span> <span class="keyword">and</span> process.lead_type_id=<span class="string">'999'</span> <span class="keyword">group</span> <span class="keyword">by</span> process.offer_Id;</span></span><br></pre></td></tr></table></figure><br>以前写的sql，on跟的限制条件不多，所以对接的时候有一堆重复数据，如果没有约束的时候，仅用普通的列相对接的话，要考虑好限制条件。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-on-where区别" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/16/on-where区别/" class="article-date">
-  	<time datetime="2015-07-16T07:37:27.000Z" itemprop="datePublished">2015-07-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/16/on-where区别/">on&amp;where区别</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><hr><br>相同之处都是增加sql的限制条件。</p>
-<p>不同的地方是join on当中on的意思就是对join增加限制条件，首先执行on关键字的过滤，&gt;然后获得一个join之后的总的一个数据表，然后通过where对这个表来进行过滤筛选。</p>
-<p>on条件是在生成临时表时使用的条件，它不管on中的条件是否为真，都会返回左边表中的记<br>录。</p>
-<p>ps:all expressions in a derived table must hava an explicit name<br>关于这个问题的原因就是使用聚合函数取别名的时候，join前后的名字可能相同，因此需要<br>将他们的名字修改掉。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">select</span> <span class="keyword">case</span> <span class="keyword">when</span> conversion.offer_Id=<span class="string">'1000dm0bj6gq'</span> <span class="keyword">then</span> <span class="string">'PS4'</span> <span class="keyword">else</span> <span class="string">'PS3'</span> <span class="keyword">end</span> <span class="keyword">as</span> Collateral,<span class="keyword">sum</span>(conversion.email_campaign_cnvrsn_cnt),<span class="keyword">sum</span>(Targeted_User_Cnt) <span class="keyword">from</span> EADW_ADM_APP.CAMPAIGN_CONVERSION conversion <span class="keyword">left</span> <span class="keyword">join</span> (<span class="keyword">select</span> offer_Id,Targeted_User_Cnt <span class="keyword">from</span> EADW_ADM_APP.CAMPAIGN_PROCESS <span class="keyword">where</span> Campaign_Id=<span class="string">'1000dm0bj63b'</span> <span class="keyword">and</span> lead_type_id=<span class="string">'999'</span>) n <span class="keyword">on</span> conversion.offer_Id=n.offer_Id <span class="keyword">where</span> conversion.Campaign_Id=<span class="string">'1000dm0bj63b'</span> <span class="keyword">and</span> conversion.lead_type_id=<span class="string">'999'</span> <span class="keyword">group</span> <span class="keyword">by</span> conversion.offer_Id;</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
